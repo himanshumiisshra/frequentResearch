@@ -3,6 +3,8 @@ import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { Toaster } from "react-hot-toast";
+import Home from "./components/home";
+
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-      </Routes>
+        <Route path="/getUsers" element={<Home />} />
+
+      </Routes> 
     </BrowserRouter>
   );
 }

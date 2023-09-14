@@ -64,7 +64,7 @@ function Register() {
 
       if (response.data.success) {
         toast.success(response.data.message);
-        navigate("/login");
+        navigate("/getUsers");
       } else {
         toast.error(response.data.message);
       }
@@ -82,7 +82,7 @@ function Register() {
             <Input
               placeholder="FirstName"
               id="Firstname"
-              name="Firstname"
+              name="firstname"
               type="text"
               pattern="[A-Za-z\s]*$"
               required
@@ -98,27 +98,27 @@ function Register() {
               required
             />
           </Form.Item>
-          <Form.Item label="Email" >
+          <Form.Item label="Email" name="email" >
             <Input placeholder="Email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" />
           </Form.Item>{" "}
           <Form.Item label="Password" name="password">
             <Input placeholder="Password" type="password" />
           </Form.Item>
-          <FormItem label="Country" >
+          <FormItem label="Country" name="country" >
             <Select
               options={countries}
               value={selectedCountry}
               onChange={(selectedOption) => setSelectedCountry(selectedOption)}
             />
           </FormItem>
-          <FormItem label="Gender" >
+          <FormItem label="Gender" name="gender">
             <Radio.Group
               options={plainOptions}
               onChange={onChange1}
               value={value1}
             />
           </FormItem>
-          <FormItem label="DOB" >
+          <FormItem label="DOB" name="dob" >
             <input
               type="date"
               value={birthDate}
@@ -128,7 +128,7 @@ function Register() {
               }}
             />
           </FormItem>
-          <FormItem label="Age" >
+          <FormItem label="Age"  >
             {birthDate && (
               <p>
                 Your age is {years} years, {months} months, and {days} days
